@@ -16,6 +16,7 @@ import (
 type PrewarmService interface {
 	ProcessChunk(ctx context.Context, batchID string, candidates []*loanv1.DebiturCandidate) (cachedCount int64, failedCount int64, failedNIKs []string, err error)
 	GetOfferingByToken(ctx context.Context, token string) (*entity.DebiturOfferingResponse, error)
+	GetTokenByNIK(ctx context.Context, nik string) (string, error)
 	CheckHealth(ctx context.Context) error
 	GetTotalCached(ctx context.Context) (int64, error)
 }
@@ -116,6 +117,10 @@ func (s *prewarmService) CheckHealth(ctx context.Context) error {
 
 func (s *prewarmService) GetTotalCached(ctx context.Context) (int64, error) {
 	return s.repo.CountCachedKeys(ctx)
+}
+
+func (s *prewarmService) GetTokenByNIK(ctx context.Context, nik string) (string, error) {
+	return s.repo.GetTokenByNIK(ctx, nik)
 }
 
 func maskAccountNumber(accountNum string) string {

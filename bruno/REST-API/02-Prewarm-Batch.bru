@@ -1,0 +1,45 @@
+meta {
+  name: 02. Prewarm Batch Debitur (REST)
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{baseUrl}}/api/v1/prewarm
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "batch_id": "BATCH-BRUNO-DEMO-001",
+    "data": [
+      {
+        "nik": "3201019999990001",
+        "nama": "Budi Santoso (Bruno Pilot)",
+        "nomor_rekening": "012301999999",
+        "nomor_telepon": "628129999999",
+        "unit_kerja_id": "UNIT-BRI-0421",
+        "existing_baki_debet": 20000000,
+        "original_plafond": 50000000,
+        "max_suplesi_amount": 30000000,
+        "allowed_tenors": [12, 24, 36]
+      },
+      {
+        "nik": "3201019999990002",
+        "nama": "Siti Aminah (Bruno Pilot)",
+        "nomor_rekening": "012301999998",
+        "nomor_telepon": "628129999998",
+        "unit_kerja_id": "UNIT-BRI-0421",
+        "existing_baki_debet": 10000000,
+        "original_plafond": 40000000,
+        "max_suplesi_amount": 30000000,
+        "allowed_tenors": [12, 24]
+      }
+    ]
+  }
+}

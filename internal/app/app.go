@@ -19,6 +19,7 @@ import (
 	fiberRecover "github.com/gofiber/fiber/v3/middleware/recover"
 	"github.com/rs/zerolog/log"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/reflection"
 )
 
 func RunServer() {
@@ -50,6 +51,7 @@ func RunServer() {
 	// 3. Setup gRPC Server
 	grpcServer := grpc.NewServer()
 	loanv1.RegisterLoanPreWarmServiceServer(grpcServer, prewarmGRPCHandler)
+	reflection.Register(grpcServer)
 
 	grpcListener, err := net.Listen("tcp", ":"+cfg.App.GrpcPort)
 	if err != nil {
