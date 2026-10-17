@@ -41,6 +41,11 @@ func NewPrewarmService(repo repository.PrewarmRedisRepository, cfg *config.Confi
 }
 
 // ProcessChunk memproses dan memvalidasi sekumpulan debitur dari stream dan menyimpannya ke Redis secara pipelined
+// validasi yg bisa dilakukan:
+// - plafond awal Harus bernilai positif (> 0) dan berada dalam rentang limit produk Kupedes (misal Rp 1 Juta s.d. Rp 500 Juta).
+// - sisa pinjaman tidak boleh melebihi plafond awal
+// - plafon tambahan tidak melebihi aturan
+// - piihan tenor sesuai aturan
 func (s *prewarmService) ProcessChunk(ctx context.Context, batchID string, candidates []*loanv1.DebiturCandidate) (int64, int64, []string, error) {
 	if len(candidates) == 0 {
 		return 0, 0, nil, nil

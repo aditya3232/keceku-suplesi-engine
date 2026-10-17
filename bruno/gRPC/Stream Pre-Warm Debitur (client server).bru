@@ -1,0 +1,36 @@
+meta {
+  name: Stream Pre-Warm Debitur (client server)
+  type: grpc
+  seq: 1
+}
+
+grpc {
+  url: localhost:50051
+  method: /keceku.loan.v1.LoanPreWarmService/StreamPreWarmDebitur
+  body: grpc
+  protoPath: ../proto/keceku/loan/v1/loan_prewarm.proto
+  auth: inherit
+  methodType: client-streaming
+}
+
+body:grpc {
+  name: message 1
+  content: '''
+    {
+        "batch_id": "BATCH-GRPCURL-001",
+        "data": [
+          {
+            "nik": "3201016666660001",
+            "nama": "Budi Grpcurl",
+            "nomor_rekening": "012301666666",
+            "nomor_telepon": "628126666666",
+            "unit_kerja_id": "UNIT-BRI-001",
+            "existing_baki_debet": 20000000,
+            "original_plafond": 50000000,
+            "max_suplesi_amount": 30000000,
+            "allowed_tenors": [12, 24, 36]
+          }
+        ]
+      }
+  '''
+}

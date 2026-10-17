@@ -1,9 +1,25 @@
 {
-  "version": "1",
   "name": "Keceku Suplesi Engine",
   "type": "collection",
   "ignore": [
     "node_modules",
     ".git"
-  ]
+  ],
+  "size": 0.0026912689208984375,
+  "filesCount": 7,
+  "protobuf": {
+    "protoFiles": [
+      {
+        "path": "../proto/keceku/loan/v1/loan_prewarm.proto",
+        "type": "file"
+      }
+    ],
+    "importPaths": [
+      {
+        "path": "../proto/keceku/loan/v1",
+        "enabled": true
+      }
+    ]
+  },
+  "version": "1"
 }
