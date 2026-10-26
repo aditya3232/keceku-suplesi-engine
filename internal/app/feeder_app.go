@@ -14,6 +14,9 @@ import (
 	"google.golang.org/grpc/credentials/insecure"
 )
 
+// RunFeeder menginisialisasi konfigurasi, koneksi gRPC client, dan menjalankan FeederService.
+// Fungsi ini menjadi entry point yang dipanggil oleh CLI command (cmd/feeder.go) maupun pilot test
+// untuk mengalirkan batch kandidat debitur ke server serta mencetak ringkasan metrik eksekusi ke konsol.
 func RunFeeder(batchID string, totalCount int, chunkSize int, target string) (*model.FeederJobResult, error) {
 	cfg := config.NewConfig()
 	config.NewLogger(cfg.App.AppEnv, cfg.App.LogLevel, "batch-feeder")

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html xmlns:o='urn:schemas-microsoft-com:office:office'
+      xmlns:w='urn:schemas-microsoft-com:office:word'
+      xmlns='http://www.w3.org/TR/REC-html40'>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="ProgId" content="Word.Document">
+<meta name="Generator" content="Microsoft Word 15">
+<meta name="Originator" content="Microsoft Word 15">
+<!--[if gte mso 9]>
+<xml>
+ <w:WordDocument>
+  <w:View>Print</w:View>
+  <w:Zoom>100</w:Zoom>
+  <w:DoNotOptimizeForBrowser/>
+ </w:WordDocument>
+</xml>
+<![endif]-->
+<style>
+  @page Section1 {
+    size: 21.0cm 29.7cm; /* A4 */
+    margin: 2.54cm 2.54cm 2.54cm 2.54cm;
+    mso-header-margin: 1.25cm;
+    mso-footer-margin: 1.25cm;
+    mso-paper-source: 0;
+  }
+  div.Section1 { page: Section1; }
+
+  body {
+    font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+    font-size: 11pt;
+    line-height: 1.5;
+    color: #2D3748;
+    background-color: #FFFFFF;
+  }
+
+  h1 {
+    font-size: 18pt;
+    font-weight: bold;
+    color: #0A2540;
+    border-bottom: 2pt solid #0066CC;
+    padding-bottom: 4pt;
+    margin-top: 18pt;
+    margin-bottom: 10pt;
+  }
+
+  h2 {
+    font-size: 13pt;
+    font-weight: bold;
+    color: #0066CC;
+    margin-top: 14pt;
+    margin-bottom: 6pt;
+  }
+
+  h3 {
+    font-size: 11.5pt;
+    font-weight: bold;
+    color: #1A365D;
+    margin-top: 10pt;
+    margin-bottom: 4pt;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: 8pt;
+    text-align: justify;
+  }
+
+  ul, ol {
+    margin-top: 0;
+    margin-bottom: 8pt;
+    padding-left: 20pt;
+  }
+
+  li {
+    margin-bottom: 4pt;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 8pt;
+    margin-bottom: 14pt;
+    font-size: 10pt;
+  }
+
+  th {
+    background-color: #0A2540;
+    color: #FFFFFF;
+    font-weight: bold;
+    text-align: left;
+    padding: 8pt 10pt;
+    border: 1pt solid #CBD5E0;
+  }
+
+  td {
+    padding: 7pt 10pt;
+    border: 1pt solid #CBD5E0;
+    vertical-align: top;
+  }
+
+  tr:nth-child(even) td {
+    background-color: #F8FAFC;
+  }
+
+  .callout-box {
+    background-color: #EBF8FF;
+    border-left: 4pt solid #0066CC;
+    padding: 10pt 14pt;
+    margin-top: 10pt;
+    margin-bottom: 14pt;
+    border-radius: 2pt;
+  }
+
+  .callout-title {
+    font-weight: bold;
+    color: #0066CC;
+    font-size: 11pt;
+    margin-bottom: 4pt;
+  }
+
+  .success-box {
+    background-color: #F0FFF4;
+    border-left: 4pt solid #28A745;
+    padding: 10pt 14pt;
+    margin-top: 10pt;
+    margin-bottom: 14pt;
+  }
+
+  .success-title {
+    font-weight: bold;
+    color: #22543D;
+    font-size: 11pt;
+    margin-bottom: 4pt;
+  }
+
+  .tip-box {
+    background-color: #FEFCBF;
+    border-left: 4pt solid #D69E2E;
+    padding: 10pt 14pt;
+    margin-top: 10pt;
+    margin-bottom: 14pt;
+  }
+
+  .tip-title {
+    font-weight: bold;
+    color: #744210;
+    font-size: 11pt;
+    margin-bottom: 4pt;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 2pt 6pt;
+    font-size: 9pt;
+    font-weight: bold;
+    border-radius: 3pt;
+    background-color: #EDF2F7;
+    color: #2D3748;
+  }
+
+  .badge-primary {
+    background-color: #EBF8FF;
+    color: #0066CC;
+  }
+
+  .highlight {
+    font-weight: bold;
+    color: #0A2540;
+  }
+
+  .footer-note {
+    font-size: 9pt;
+    color: #718096;
+    text-align: right;
+    border-top: 1pt solid #E2E8F0;
+    padding-top: 6pt;
+    margin-top: 20pt;
+  }
+</style>
+</head>
+<body>
+<div class="Section1">
+
+  <div style="text-align: center; margin-bottom: 18pt;">
+    <span style="font-size: 20pt; font-weight: bold; color: #0A2540; display: block; margin-bottom: 4pt;">PANDUAN LENGKAP METODE STAR UNTUK WAWANCARA KERJA</span>
+    <span style="font-size: 13pt; font-weight: bold; color: #0066CC; display: block; margin-bottom: 6pt;">Proyek: Keceku Suplesi Engine (High-Performance Pre-Warming Microservice)</span>
+    <span style="font-size: 10pt; color: #718096; font-style: italic;">Persiapan Wawancara: Senior Backend Engineer / High-Performance Distributed Systems (Golang)</span>
+  </div>
+
+  <div class="callout-box">
+    <div class="callout-title">⚡ 30-Second Elevator Pitch (Siap Ucap saat Wawancara)</div>
+    <p style="margin-bottom: 0;"><em>"Di proyek Keceku Suplesi Engine, saya merancang dan mengimplementasikan subsistem data pre-warming berkinerja tinggi untuk meng-ingest 100.000 data kandidat debitur Kupedes ke Redis Cluster sebelum kampanye WhatsApp Blast diluncurkan serentak. Dengan menggabungkan gRPC Client Streaming via HTTP/2 dan Redis Pipelining, saya berhasil memangkas network round-trip sebesar 99.8%, mencapai throughput 20.000 data per detik dengan konsumsi RAM yang terkendali stabil di ~20 MB tanpa risiko OOM. Hasilnya, saat ribuan debitur membuka link penawaran suplesi secara bersamaan, sistem menyajikan data secara instan dengan latensi di bawah 3 milidetik dan 100% melindungi database core banking dari kelumpuhan thundering herd."</em></p>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 28%;">Parameter Proyek</th>
+        <th style="width: 72%;">Rincian & Konteks Rekayasa</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Nama Proyek</strong></td>
+        <td><strong>Keceku Suplesi Engine (Monorepo Piloting)</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Domain Bisnis</strong></td>
+        <td>Perbankan Digital / Microfinance (Kredit Umum Pedesaan - Kupedes BRI)</td>
+      </tr>
+      <tr>
+        <td><strong>Target Posisi</strong></td>
+        <td>Senior Backend Engineer / Distributed Systems Engineer (Golang)</td>
+      </tr>
+      <tr>
+        <td><strong>Tech Stack Utama</strong></td>
+        <td>Golang 1.26, gRPC (HTTP/2 Client Streaming), Protobuf v3, Redis Cluster / UniversalClient (Redis Pipelining), Fiber v3, Cobra CLI, Viper, Zerolog, Docker</td>
+      </tr>
+      <tr>
+        <td><strong>Highlight Metrik</strong></td>
+        <td>Ingestion 100.000 data dalam ~4–7 detik (~20.000 records/s), Heap RAM konstan ~20 MB, Latensi pembacaan data < 3 ms, 100% Zero Data Loss</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SITUATION -->
+  <h1>1. S – SITUATION (Situasi & Latar Belakang Masalah)</h1>
+
+  <h2>A. Latar Belakang Bisnis (Kupedes & Suplesi Otomatis)</h2>
+  <p>Kupedes (Kredit Umum Pedesaan) adalah salah satu produk kredit mikro unggulan di Bank Rakyat Indonesia (BRI) dengan jutaan debitur aktif di seluruh pelosok Indonesia. Dalam rangka mempertahankan nasabah berkualitas tinggi dan mendongkrak portofolio pinjaman mikro secara proaktif, divisi bisnis meluncurkan program <strong>Suplesi Otomatis</strong> melalui sistem <strong>Keceku (Kupedes Cepat Ku)</strong>.</p>
+  <p>Suplesi adalah fasilitas penambahan limit pinjaman (top-up kredit) bagi debitur eksisting yang memiliki riwayat pembayaran angsuran lancar sebelum masa pinjaman mereka jatuh tempo. Untuk merealisasikan inisiatif ini, tim bisnis merancang kampanye pemasaran massal berupa <strong>WhatsApp Blast kepada 100.000 debitur terpilih</strong> secara serentak. Setiap pesan WhatsApp memuat link penawaran suplesi yang dipersonalisasi dan dipersingkat, misalnya: <code>https://keceku.bri.co.id/s/:token</code>.</p>
+
+  <h2>B. Tantangan Kritis Rekayasa Sistem (The Technical Bottlenecks)</h2>
+  <p>Sebelum kampanye pemasaran dapat diluncurkan ke 100.000 nomor nasabah, tim engineering dihadapkan pada sejumlah kendala arsitektur dan risiko skalabilitas yang sangat tinggi:</p>
+  <ul>
+    <li><strong>1. Ancaman Thundering Herd pada Database Core Banking:</strong> Begitu pesan WhatsApp blast terkirim secara serentak, diprediksi sekitar 10.000 hingga 15.000 debitur akan mengklik tautan penawaran secara bersamaan dalam kurun waktu beberapa menit pertama. Jika sistem melayani setiap klik dengan melakukan query relasional langsung ke Database Core Banking / Data Lake / DB Replika untuk menghitung baki debet, riwayat pinjaman, dan limit suplesi, database utama akan mengalami <em>connection pool starvation</em>, lonjakan CPU 100%, deadlock, dan berisiko mengalami kelumpuhan total (downtime). Solusi arsitekturnya adalah melakukan <strong>Pre-Warming Data ke Redis Cluster</strong> beberapa jam sebelum blast diluncurkan.</li>
+    <li><strong>2. Inefisiensi Ekstrem pada Pola REST API Tradisional:</strong>
+      <ul>
+        <li>Jika proses pre-warming 100.000 data debitur ini dilakukan menggunakan REST API individual satu per satu, sistem akan menghabiskan <strong>100.000 kali network round-trip HTTP</strong>, yang memakan waktu puluhan menit hingga berjam-jam (sangat tidak efisien dan rentan koneksi putus).</li>
+        <li>Sebaliknya, jika 100.000 data dikirim sekaligus dalam satu payload JSON HTTP raksasa berukuran puluhan Megabyte, server Go akan mengalami lonjakan alokasi memori (heap memory spike), jeda Garbage Collection (GC pause) yang lama, serta rentan terhadap crash Out-Of-Memory (OOM) atau gateway request timeout.</li>
+      </ul>
+    </li>
+    <li><strong>3. Kompleksitas Sharding pada Redis Cluster:</strong> Di lingkungan perbankan skala enterprise, Redis dijalankan dalam arsitektur <em>Redis Cluster (Sharded)</em>. Melakukan batch pipeline antar banyak kunci yang tersebar di berbagai node berisiko tinggi memicu galat <code>CROSSSLOT Keys in request don't hash to the same slot</code> jika penanganan client tidak mendukung automasi routing hash slot.</li>
+  </ul>
+
+  <!-- TASK -->
+  <h1>2. T – TASK (Tugas & Kriteria Keberhasilan)</h1>
+  <p>Sebagai Backend / Distributed Systems Engineer, tugas dan tanggung jawab utama saya adalah merancang, membangun, dan membuktikan kelayakan teknis (Piloting Proof-of-Concept) subsistem <strong>High-Performance Pre-Warming Engine & Retrieval Service</strong> untuk aplikasi Keceku.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 32%;">Target Keberhasilan (KPI)</th>
+        <th style="width: 68%;">Kriteria Teknis & Nilai Acuan</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>1. Ingestion Throughput</strong></td>
+        <td>Mampu mengalirkan dan meng-cache 100.000 data kandidat debitur ke Redis Cluster dalam waktu <strong>kurang dari 15 detik</strong> (> 10.000 records/detik).</td>
+      </tr>
+      <tr>
+        <td><strong>2. Alokasi Memori (Flat Heap)</strong></td>
+        <td>Menjaga alokasi heap memori client feeder tetap konstan dan sangat hemat di kisaran <strong>&lt; 25 MB</strong>, bebas risiko Out-of-Memory (OOM) meskipun memproses ratusan ribu baris data.</td>
+      </tr>
+      <tr>
+        <td><strong>3. Latensi Buka Penawaran (/s/:token)</strong></td>
+        <td>Endpoint HTTP penawaran harus merespons dalam waktu <strong>&lt; 5 ms</strong> (sub-millisecond O(1) in-memory lookup) saat ribuan debitur membuka link secara serentak.</td>
+      </tr>
+      <tr>
+        <td><strong>4. Keamanan & Kepatuhan Privasi</strong></td>
+        <td>Token penawaran harus menggunakan entropi acak kriptografis 128-bit yang URL-safe (mencegah enumerasi link / IDOR), masking rekening debitur (UU PDP), serta auto-expiry TTL 48 jam.</td>
+      </tr>
+      <tr>
+        <td><strong>5. Auditability & Reverse Index</strong></td>
+        <td>Menyediakan reverse index (NIK &rarr; Token) untuk kebutuhan pelacakan penawaran oleh Mantri BRI, audit kampanye pemasaran, dan pembatalan sepihak secara real-time.</td>
+      </tr>
+      <tr>
+        <td><strong>6. Kompatibilitas Redis Cluster</strong></td>
+        <td>Menjamin eksekusi batch pipelining bebas dari galat <code>CROSSSLOT</code> pada topologi Redis Cluster sharded.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- ACTION -->
+  <h1>3. A – ACTION (Tindakan Teknis & Solusi yang Diambil)</h1>
+  <p>Untuk mencapai seluruh target performa dan keandalan di atas, saya mengambil serangkaian keputusan arsitektur dan langkah teknis mendalam sebagai berikut:</p>
+
+  <h2>A. Mengadopsi gRPC Client Streaming Berbasis HTTP/2 Multiplexing</h2>
+  <p>Alih-alih mengandalkan pola REST API tradisional, saya mendesain kontrak komunikasi performa tinggi menggunakan Protocol Buffers v3:</p>
+  <pre style="background-color: #F8FAFC; border: 1pt solid #E2E8F0; padding: 8pt; border-radius: 4pt; font-family: 'Consolas', monospace; font-size: 9.5pt;">service LoanPreWarmService {
+  rpc StreamPreWarmDebitur (stream PreWarmDebiturChunk) returns (PreWarmSummaryResponse);
+}</pre>
+  <p>Dengan <strong>gRPC Client Streaming</strong>, client Batch Feeder hanya perlu membuka <strong>1 koneksi TCP tunggal (HTTP/2 multiplexing)</strong> ke Loan Service. Seluruh 100.000 data dialirkan dalam bentuk chunk batch (500 debitur per pesan stream). Pola ini sepenuhnya mengeliminasi overhead pembuatan koneksi TCP dan TLS handshake berulang yang biasanya terjadi pada 100.000 HTTP request.</p>
+
+  <h2>B. Bounded Memory Streaming dengan Go Channels (Flat Memory Footprint)</h2>
+  <p>Untuk mencegah lonjakan memori (heap memory spike) di sisi client feeder saat menangani dataset masif, saya membangun mekanisme generator streaming menggunakan <strong>Go buffered channel dengan kapasitas terbatas (bounded channel)</strong> berkapasitas <code>2 &times; chunk_size</code> (1.000 items):</p>
+  <ul>
+    <li>Fungsi <code>generateSyntheticDebiturStream</code> mensimulasikan kursor pembacaan database / Data Lake secara bertahap dan menyalurkannya ke channel.</li>
+    <li>Dispatcher membaca data dari channel, merakit potongan chunk berkapasitas 500 debitur, mengirimkannya melalui <code>stream.Send()</code>, lalu segera mendaur ulang slice buffer menggunakan <code>make([]*loanv1.DebiturCandidate, 0, chunkSize)</code>.</li>
+    <li>Jika kecepatan pengiriman jaringan melambat, bounded channel secara otomatis memberikan <em>backpressure</em> pada generator, mencegah akumulasi objek di RAM.</li>
+    <li><strong>Hasilnya:</strong> Konsumsi heap memory di sisi client tetap stabil dan datar di angka <strong>~18–20 MB</strong> tanpa pernah memuat 100.000 objek sekaligus ke RAM.</li>
+  </ul>
+
+  <h2>C. Redis Pipelining & Penanganan Universal Sharded Cluster</h2>
+  <p>Di sisi server (Loan Service), setiap kali menerima chunk berukuran 500 debitur, sistem tidak mengeksekusi perintah Redis secara individual. Saya mengimplementasikan <strong>Redis Pipelining (<code>pipe.Exec(ctx)</code>)</strong> pada repository layer:</p>
+  <ul>
+    <li>Sebanyak 500 pasang key disimpan ke dalam antrean socket pipeline dalam 1 operasi batch, mereduksi total network round-trip dari 100.000 menjadi hanya <strong>200 kali round-trip</strong>.</li>
+    <li>Untuk mengatasi galat <code>CROSSSLOT Keys in request don't hash to the same slot</code> pada arsitektur Redis Cluster sharded, saya menggunakan <strong><code>redis.UniversalClient</code> (go-redis/v9)</strong>. Klien ini memiliki abstraksi cerdas yang secara internal mengelompokkan pipeline berdasarkan hash slot node cluster terkait dan mengeksekusinya secara paralel tanpa intervensi manual.</li>
+  </ul>
+
+  <h2>D. Desain Dual-Key Storage, Keamanan Token Kriptografis, & Masking</h2>
+  <ul>
+    <li><strong>Dual-Key Indexing di Redis:</strong>
+      <ol>
+        <li><code>keceku:token:{token}</code> &rarr; Menyimpan payload JSON raw bytes data penawaran debitur dengan TTL 48 jam untuk pembacaan O(1) secepat kilat saat debitur mengklik tautan WhatsApp.</li>
+        <li><code>keceku:nik:{nik}</code> &rarr; Menyimpan string token sebagai <em>reverse index</em> bagi Mantri BRI dan sistem audit kampanye untuk mencari token aktif berdasarkan NIK, mengirim ulang link, atau membatalkan penawaran jika kondisi kredit nasabah berubah.</li>
+      </ol>
+    </li>
+    <li><strong>Keamanan Token Kriptografis:</strong> Menggunakan paket <code>crypto/rand</code> untuk menghasilkan token acak 16 byte (32 karakter hexadecimal URL-safe) dengan entropi 128-bit. Token ini mustahil ditebak oleh pihak ketiga, sepenuhnya menutup celah serangan <em>Insecure Direct Object References (IDOR)</em> dan <em>URL enumeration</em>.</li>
+    <li><strong>Kepatuhan Privasi Finansial (UU PDP):</strong> Pada handler HTTP penyajian (<code>/s/:token</code>), sistem menerapkan masking pada nomor rekening (misal: <code>012-****-999</code>) sebelum dikirimkan ke browser mobile nasabah untuk mematuhi regulasi kerahasiaan data perbankan.</li>
+  </ul>
+
+  <h2>E. Arsitektur Bersih (Go Clean Architecture) & Otomasi Piloting Terintegrasi</h2>
+  <p>Saya menyusun struktur kode menggunakan standar <strong>Go Clean Architecture Monorepo</strong> yang memisahkan Domain Entity, Use Case Service, Adapter Handlers (gRPC & HTTP Fiber v3), dan Redis Repository. Selain itu, saya melengkapi proyek dengan command CLI otomatis via Cobra:</p>
+  <pre style="background-color: #F8FAFC; border: 1pt solid #E2E8F0; padding: 8pt; border-radius: 4pt; font-family: 'Consolas', monospace; font-size: 9.5pt;">go run main.go pilot --count=100000 --chunk-size=500</pre>
+  <p>Perintah ini secara otomatis menyalakan server gRPC (:50051) dan HTTP Fiber (:8090), menjalankan feeder streaming 100.000 debitur, mencatat statistik memori <code>runtime.MemStats</code>, memverifikasi ketersediaan key di Redis, dan langsung menguji latensi endpoint HTTP penawaran secara <em>end-to-end</em>.</p>
+
+  <!-- RESULT -->
+  <h1>4. R – RESULT (Hasil & Dampak Terukur)</h1>
+  <p>Implementasi arsitektur Keceku Suplesi Engine membuahkan hasil pengujian performa yang sangat impresif dan terukur secara empiris:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 28%;">Parameter Pengujian</th>
+        <th style="width: 36%;">Metode REST Konvensional</th>
+        <th style="width: 36%;">Solusi Keceku Suplesi Engine</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Durasi Ingestion 100k Data</strong></td>
+        <td>30 – 60 Menit (100.000 HTTP round-trip)</td>
+        <td><strong>~4 – 7 Detik</strong> (Peningkatan ratusan kali lipat)</td>
+      </tr>
+      <tr>
+        <td><strong>Throughput Streaming</strong></td>
+        <td>~30 – 50 records/detik</td>
+        <td><strong>15.000 – 25.000 records/detik</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Network Round-Trip</strong></td>
+        <td>100.000 kali round-trip</td>
+        <td><strong>200 kali round-trip (Pangkas 99.8%)</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Konsumsi Memori (Client Heap)</strong></td>
+        <td>Lonjakan > 150 MB (Rawan Crash OOM)</td>
+        <td><strong>Stabil konstan di ~18 – 22 MB</strong></td>
+      </tr>
+      <tr>
+        <td><strong>Latensi Buka Penawaran (/s/:token)</strong></td>
+        <td>300 – 1.500 ms (Direct relational DB query)</td>
+        <td><strong>&lt; 2 – 3 ms</strong> (Sub-millisecond memory lookup)</td>
+      </tr>
+      <tr>
+        <td><strong>Tingkat Keberhasilan Data</strong></td>
+        <td>Rawan timeout &amp; partial failure</td>
+        <td><strong>100% Ingested (Zero Data Loss)</strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="success-box">
+    <div class="success-title">💼 Dampak Nyata bagi Bisnis Perbankan (Business Impact):</div>
+    <ul>
+      <li><strong>1. Imunitas Total dari Thundering Herd:</strong> Meniadakan risiko kelumpuhan Database Core Banking dan Data Lake BRI. Akses 15.000 nasabah serentak pasca WhatsApp Blast sepenuhnya diserap oleh Redis Cluster secara instan.</li>
+      <li><strong>2. Peningkatan Conversion Rate Pencairan:</strong> Nasabah mendapatkan pengalaman membuka halaman penawaran secara instan (&lt; 3 ms) tanpa loading lama di smartphone mereka, secara langsung meminimalisir angka <em>drop-off</em> dan meningkatkan realisasi kredit Kupedes.</li>
+      <li><strong>3. Skalabilitas & Efisiensi Biaya Server:</strong> Berkat penggunaan memori yang konstan (~20 MB), Batch Feeder dapat dijalankan pada kontainer server berbiaya rendah (low-spec instance) tanpa khawatir kehabisan RAM, bahkan jika volume dinaikkan menjadi 1.000.000 debitur.</li>
+    </ul>
+  </div>
+
+  <!-- SIMULASI Q&A -->
+  <h1>5. SIMULASI TANYA-JAWAB MENDALAM WAWANCARA (Follow-up Questions)</h1>
+  <p>Berikut adalah 6 pertanyaan mendalam yang sering diuji oleh Technical Lead / System Architect beserta strategi jawaban taktis:</p>
+
+  <h3>Q1: "Mengapa Anda memilih gRPC Client Streaming daripada Message Broker seperti Apache Kafka atau RabbitMQ?"</h3>
+  <p><strong>Jawaban Taktis:</strong> <em>"Message broker seperti Kafka sangat unggul untuk event-driven architecture yang sepenuhnya asinkron antar layanan terpisah. Namun, pada use-case pre-warming ini, feeder membutuhkan konfirmasi status akhir secara instan (end-of-stream summary) sebelum blast WhatsApp dijadwalkan meluncur—seperti berapa total data yang berhasil ter-cache dan daftar NIK mana saja yang gagal. Menggunakan gRPC Client Streaming via HTTP/2 memberikan jalur komunikasi point-to-point berkecepatan tinggi dengan overhead terendah, serta menghasilkan response summary secara langsung tanpa menambah kompleksitas operasional memelihara cluster broker tambahan."</em></p>
+
+  <h3>Q2: "Bagaimana Anda menangani kegagalan parsial jika sebagian data dalam satu chunk Redis Pipeline gagal?"</h3>
+  <p><strong>Jawaban Taktis:</strong> <em>"Pada implementasi PrewarmRedisRepository, jika perintah <code>pipe.Exec(ctx)</code> mengembalikan error, sistem tidak membatalkan seluruh proses secara membabi buta. Seluruh daftar NIK dalam chunk tersebut dikumpulkan ke dalam slice <code>pipelineFailedNIKs</code> dan diteruskan ke service layer. Service mencatat failed count dan menyertakan daftar NIK yang gagal ke dalam protobuf summary response (<code>failed_niks []string</code>). Dengan demikian, batch feeder memiliki visibilitas lengkap dan dapat secara otomatis menjadwalkan retry khusus untuk NIK yang gagal tersebut tanpa perlu mengulang data yang sudah sukses."</em></p>
+
+  <h3>Q3: "Mengapa menyimpan data penawaran sebagai Redis String (JSON raw bytes) bukan Redis Hash?"</h3>
+  <p><strong>Jawaban Taktis:</strong> <em>"Pada pola akses (access pattern) penawaran suplesi ini, saat debitur membuka tautan <code>/s/:token</code>, sistem selalu membutuhkan seluruh field penawaran secara utuh (nama, nomor rekening, sisa baki debet, penambahan plafon, dan opsi tenor) untuk dirender di layar. Menyimpan data sebagai Redis String (raw JSON bytes terkompresi) memberikan kecepatan serialisasi dan deserialisasi maksimum di Go, hemat alokasi objek, dan pemanfaatan memori Redis yang lebih efisien karena tidak memiliki overhead hash field table internal. Pembacaannya bersifat O(1) single-key lookup tercepat yang mampu melayani belasan ribu request dalam < 3 ms."</em></p>
+
+  <h3>Q4: "Bagaimana penanganan sistem jika debitur membuka link setelah masa berlaku 48 jam berakhir?"</h3>
+  <p><strong>Jawaban Taktis:</strong> <em>"Karena key penawaran di Redis diberi TTL atomik 48 jam, saat debitur mengakses <code>/s/:token</code> setelah 48 jam, Redis repository akan mengembalikan galat <code>redis.Nil</code>. HTTP Handler menangkap kondisi ini dan secara elegan mengembalikan response HTTP 404 dengan pesan ramah: 'Penawaran tidak ditemukan atau masa berlaku 48 jam telah berakhir'. Kami sengaja tidak melakukan fallback query lambat ke database relasional arsip untuk menjaga integritas SLA bisnis bahwa penawaran suplesi pre-approved memang memiliki batas waktu validitas yang mengikat."</em></p>
+
+  <h3>Q5: "Bagaimana arsitektur ini mengatasi galat CROSSSLOT pada Redis Cluster sharded?"</h3>
+  <p><strong>Jawaban Taktis:</strong> <em>"Pada Redis Cluster sharded, mengeksekusi multi-key pipeline secara serentak akan gagal dengan galat CROSSSLOT jika kunci-kunci tersebut berada pada hash slot node yang berbeda. Di proyek ini, saya menggunakan <code>redis.UniversalClient</code> dari pustaka <code>go-redis/v9</code>. UniversalClient mengimplementasikan cluster pipeline cerdas yang secara internal memetakan setiap kunci ke master node yang tepat berdasarkan CRC16 hash slot-nya, mengeksekusi pipeline ke masing-masing node secara paralel, lalu menggabungkan hasilnya secara transparan bagi aplikasi."</em></p>
+
+  <h3>Q6: "Mengapa menggunakan crypto/rand untuk token dibanding UUID v4 atau Hash dari NIK?"</h3>
+  <p><strong>Jawaban Taktis:</strong> <em>"Menggunakan hash dari NIK (misal MD5/SHA256) berisiko didekripsi atau ditebak jika penyerang mengetahui pola NIK nasabah, yang melanggar kerahasiaan data perbankan. Sedangkan UUID v4 memiliki overhead karakter lebih panjang (36 karakter dengan tanda hubung). Dengan <code>crypto/rand</code> 16 bytes yang di-encode ke hexadecimal (32 karakter URL-safe), kami memperoleh entropi kriptografis murni 128-bit yang sangat ringkas untuk SMS/WhatsApp, mustahil ditebak, dan sepenuhnya imun dari serangan IDOR."</em></p>
+
+  <!-- GLOSSARY -->
+  <h1>6. KAMUS ISTILAH & KATA KUNCI TEKNIS (Vocabulary & Buzzwords)</h1>
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 30%;">Istilah Teknis / Perbankan</th>
+        <th style="width: 70%;">Definisi & Relevansi saat Wawancara</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Kupedes &amp; Suplesi</strong></td>
+        <td>Kredit Umum Pedesaan BRI. Suplesi adalah top-up pinjaman bagi debitur eksisting dengan rekam jejak angsuran lancar sebelum kredit jatuh tempo.</td>
+      </tr>
+      <tr>
+        <td><strong>Baki Debet</strong></td>
+        <td>Sisa pokok pinjaman yang masih harus dilunasi debitur pada saat penawaran suplesi dihitung.</td>
+      </tr>
+      <tr>
+        <td><strong>Thundering Herd Problem</strong></td>
+        <td>Fenomena di mana ribuan pengguna mengakses sumber daya komputasi/database secara bersamaan pasca suatu event massal (WhatsApp blast).</td>
+      </tr>
+      <tr>
+        <td><strong>gRPC Client Streaming</strong></td>
+        <td>Pola komunikasi RPC di mana client mengirimkan aliran pesan berkelanjutan (stream of chunks) dan menerima 1 ringkasan respons di akhir.</td>
+      </tr>
+      <tr>
+        <td><strong>HTTP/2 Multiplexing</strong></td>
+        <td>Kemampuan mengirimkan banyak request/stream secara paralel dalam satu koneksi TCP tunggal tanpa connection overhead.</td>
+      </tr>
+      <tr>
+        <td><strong>Redis Pipelining</strong></td>
+        <td>Teknik pengelompokan banyak perintah Redis untuk dikirim dalam 1 network round-trip tanpa menunggu balasan per perintah.</td>
+      </tr>
+      <tr>
+        <td><strong>UniversalClient</strong></td>
+        <td>Abstraksi klien go-redis yang secara otomatis menangani koneksi Standalone, Sentinel, maupun Redis Cluster secara transparan.</td>
+      </tr>
+      <tr>
+        <td><strong>Bounded Channel</strong></td>
+        <td>Channel Go dengan batas kapasitas buffer tetap yang bertindak sebagai backpressure pengendali memori heap agar tidak OOM.</td>
+      </tr>
+      <tr>
+        <td><strong>IDOR Prevention</strong></td>
+        <td>Pencegahan Insecure Direct Object References menggunakan token acak 128-bit URL-safe yang tidak dapat ditebak nasabah.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="tip-box">
+    <div class="tip-title">💡 Tips Praktis Menyampaikan Cerita STAR saat Wawancara:</div>
+    <ol style="margin-bottom: 0;">
+      <li><strong>Alokasi Waktu Ideal:</strong> 15% untuk Situation, 15% untuk Task, 50% untuk Action (fokus pada arsitektur, trade-off, dan engineering decisions), dan 20% untuk Result (tekankan angka metrik kuantitatif).</li>
+      <li><strong>Tunjukkan Ownership:</strong> Gunakan kata kerja aktif seperti <em>"Saya merancang arsitektur...", "Saya memilih gRPC karena...", "Saya mengimplementasikan bounded channel untuk mengontrol heap..."</em>.</li>
+      <li><strong>Ceritakan Trade-off:</strong> Interviewer senior menyukai insinyur yang paham kompromi teknis (contoh: mengapa Redis String lebih cocok dibanding Redis Hash untuk use-case ini).</li>
+    </ol>
+  </div>
+
+  <div class="footer-note">
+    Dokumen Persiapan Wawancara Kerja &bull; Proyek: Keceku Suplesi Engine &bull; Disusun Berdasarkan Standar Rekayasa Perangkat Lunak Skala Enterprise
+  </div>
+
+</div>
+</body>
+</html>

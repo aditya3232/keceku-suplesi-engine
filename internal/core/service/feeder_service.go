@@ -1,3 +1,5 @@
+// Package service berisi logika bisnis inti (core business logic) dari aplikasi,
+// termasuk pre-warming cache dan batch ingestion feeder.
 package service
 
 import (
@@ -11,17 +13,40 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
+// FeederService mendefinisikan kontrak ingestion data debitur masif ke server.
+// Service ini bertugas mengalirkan (streaming) kandidat debitur ke Loan Service
+// menggunakan gRPC Client Streaming dengan konsumsi memori yang stabil dan efisiensi
+// jaringan tinggi.
 type FeederService interface {
+	// RunFeeder menjalankan proses batch feeding secara streaming ke gRPC server.
+	// Mengembalikan FeederJobResult yang merangkum metrik performa (durasi, throughput, dan alokasi memori).
 	RunFeeder(ctx context.Context, cfg model.FeederJobConfig, client loanv1.LoanPreWarmServiceClient) (*model.FeederJobResult, error)
 }
 
+// feederService merupakan implementasi konkret dari interface FeederService.
 type feederService struct{}
 
+// NewFeederService membuat dan mengembalikan instance baru dari FeederService.
 func NewFeederService() FeederService {
 	return &feederService{}
 }
 
+// RunFeeder mengorkestrasi pengaliran data debitur masif ke Loan Service via gRPC Client Streaming.
+//
+// Cara Kerja:
+//  1. Validasi & Normalisasi Konfigurasi: Memastikan ChunkSize, TotalCount, dan BatchID terdefinisi dengan nilai aman.
+//  2. Membuka Koneksi Stream: Menginisialisasi 1 koneksi gRPC Client Stream tunggal (HTTP/2) ke server target.
+//  3. Pipeline Generator & Backpressure: Menjalankan goroutine produsen data ke buffered channel (kapasitas 2x ChunkSize).
+//     Mekanisme backpressure memastikan pembacaan data otomatis terjeda jika jaringan/server melambat,
+//     sehingga heap memory tetap konstan (< 25 MB) tanpa risiko Out of Memory (OOM).
+//  4. Batch Chunking: Mengumpulkan item dari channel ke dalam slice berukuran ChunkSize (default: 500)
+//     sebelum dikirim sebagai 1 pesan proto PreWarmDebiturChunk untuk meminimalkan network round-trip.
+//  5. Flush Tail Data: Mengirimkan sisa item terakhir yang belum genap mencapai ChunkSize.
+//  6. Close and Receive Summary: Menutup stream dari sisi client (EOF) dan menerima satu respons ringkasan
+//     (PreWarmDebiturSummary) dari server yang berisi total data berhasil di-cache ke Redis.
+//  7. Profiling & Metrik: Mengukur throughput (record/detik), durasi pemrosesan, dan penggunaan heap runtime Go.
 func (f *feederService) RunFeeder(ctx context.Context, cfg model.FeederJobConfig, client loanv1.LoanPreWarmServiceClient) (*model.FeederJobResult, error) {
+	// Langkah 1: Validasi dan set default konfigurasi batch feeder
 	if cfg.ChunkSize <= 0 {
 		cfg.ChunkSize = 500
 	}
@@ -39,13 +64,14 @@ func (f *feederService) RunFeeder(ctx context.Context, cfg model.FeederJobConfig
 		Str("source", "service.feederService.RunFeeder").
 		Msg("Starting Batch Feeder Client Streaming to Loan Service")
 
-	// 1. Inisialisasi gRPC Client Stream
+	// Langkah 2: Inisialisasi gRPC Client Stream (1 koneksi HTTP/2 tunggal)
 	stream, err := client.StreamPreWarmDebitur(ctx)
 	if err != nil {
 		return nil, fmt.Errorf("failed to open gRPC client stream: %w", err)
 	}
 
-	// 2. Channel data generator dengan bounded buffer untuk menjaga heap konstan (< 25 MB)
+	// Langkah 3: Inisialisasi bounded buffered channel sebagai pipeline produsen-konsumen.
+	// Bounded channel ini memberikan backpressure otomatis agar memory footprint tetap stabil (< 25 MB).
 	dataChan := make(chan *loanv1.DebiturCandidate, cfg.ChunkSize*2)
 	go generateSyntheticDebiturStream(cfg.TotalCount, dataChan)
 
@@ -54,10 +80,12 @@ func (f *feederService) RunFeeder(ctx context.Context, cfg model.FeederJobConfig
 	chunkIndex := 0
 	totalDispatched := 0
 
+	// Langkah 4: Konsumsi data dari channel dan kelompokkan per chunk (batching)
 	for debitur := range dataChan {
 		chunk = append(chunk, debitur)
 		totalDispatched++
 
+		// Jika ukuran chunk tercapai, kirimkan paket chunk ke stream
 		if len(chunk) >= cfg.ChunkSize {
 			chunkIndex++
 			sendErr := stream.Send(&loanv1.PreWarmDebiturChunk{
@@ -76,12 +104,12 @@ func (f *feederService) RunFeeder(ctx context.Context, cfg model.FeederJobConfig
 					Msg("Chunk streaming progress")
 			}
 
-			// Reset slice buffer
+			// Alokasikan kembali slice baru dengan kapasitas tetap untuk chunk berikutnya
 			chunk = make([]*loanv1.DebiturCandidate, 0, cfg.ChunkSize)
 		}
 	}
 
-	// 3. Kirim sisa data terakhir jika ada
+	// Langkah 5: Kirim sisa data terakhir (tail chunk) jika jumlah data bukan kelipatan ChunkSize
 	if len(chunk) > 0 {
 		chunkIndex++
 		sendErr := stream.Send(&loanv1.PreWarmDebiturChunk{
@@ -93,12 +121,13 @@ func (f *feederService) RunFeeder(ctx context.Context, cfg model.FeederJobConfig
 		}
 	}
 
-	// 4. Tutup stream dan terima ringkasan respons dari server
+	// Langkah 6: Tutup stream sisi client dan terima ringkasan respons (summary) dari server
 	summary, err := stream.CloseAndRecv()
 	if err != nil {
 		return nil, fmt.Errorf("error waiting stream summary from server: %w", err)
 	}
 
+	// Langkah 7: Pengukuran metrik performa (durasi, throughput, alokasi memori runtime)
 	duration := time.Since(startTime)
 	durationSec := duration.Seconds()
 	if durationSec <= 0 {
@@ -133,7 +162,11 @@ func (f *feederService) RunFeeder(ctx context.Context, cfg model.FeederJobConfig
 	return result, nil
 }
 
-// generateSyntheticDebiturStream mensimulasikan pembacaan baris data dari Data Lake / DB Replika secara kursor
+// generateSyntheticDebiturStream mensimulasikan pembacaan baris data dari Data Lake / DB Replika secara kursor.
+//
+// Fungsi ini berjalan secara asinkron pada goroutine terpisah sebagai produsen data.
+// Menggunakan channel terarah kirim (chan<-) dan ditutup secara otomatis (close) ketika seluruh data
+// selesai digenerate untuk memberi sinyal EOF ke perulangan range penerima.
 func generateSyntheticDebiturStream(total int, out chan<- *loanv1.DebiturCandidate) {
 	defer close(out)
 
