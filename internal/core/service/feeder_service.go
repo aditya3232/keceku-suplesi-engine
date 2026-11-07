@@ -167,6 +167,10 @@ func (f *feederService) RunFeeder(ctx context.Context, cfg model.FeederJobConfig
 // Fungsi ini berjalan secara asinkron pada goroutine terpisah sebagai produsen data.
 // Menggunakan channel terarah kirim (chan<-) dan ditutup secara otomatis (close) ketika seluruh data
 // selesai digenerate untuk memberi sinyal EOF ke perulangan range penerima.
+// untuk realcase yang bisa dilakukan adalah:
+// - db cursor: menggunakan perulangan for rows.Next() lalu push ke channel
+// - kelemahan db cursor bisa membuka koneksi terlalu lama, maka bisa gunakan keyset pagination: where id > :last_seen_id limit 1000
+// - fetch message dari kafka, kemudian akan kirim ofset setelah data berhasil di stream ke grpc per 500 data
 func generateSyntheticDebiturStream(total int, out chan<- *loanv1.DebiturCandidate) {
 	defer close(out)
 
